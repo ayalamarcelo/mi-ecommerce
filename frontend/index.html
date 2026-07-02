@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi E-Commerce</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header
+      class="d-flex justify-content-between align-items-center p-3 bg-light"
+    >
+      <img
+        src="https://dummyimage.com/300x300/cccccc/000000.png"
+        width="100"
+        height="100"
+        alt="Logo"
+      />
+      <nav>
+        <ul class="menu d-flex list-unstyled gap-3">
+          <li class="itemMenu">
+            <a href="#productos" class="text-dark">Productos</a>
+          </li>
+          <li class="itemMenu">
+            <a href="#reseñas" class="text-dark">Reseñas</a>
+          </li>
+          <li class="itemMenu">
+            <a href="#carrito" class="text-dark" id="open-cart">
+              Carrito (<span id="cart-counter-nav">0</span>)
+            </a>
+          </li>
+          <li class="itemMenu">
+            <a href="#redes-sociales" class="text-dark">Redes Sociales</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section class="portada text-center p-5">
+        <h1>Mi web e-commerce</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur
+          ducimus itaque rem!
+        </p>
+      </section>
+
+      <section id="productos" class="contenedorCards container my-5">
+        <h2 class="text-center">Productos</h2>
+        <div
+          id="productos-container"
+          class="d-flex flex-wrap justify-content-around gap-3"
+        >
+          <!-- Productos serán insertados aquí -->
+        </div>
+      </section>
+
+      <!-- Sección de reseñas -->
+      <section id="reseñas" class="container my-5">
+        <h2 class="text-center">Reseñas</h2>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <div class="card">
+              <img
+                src="https://dummyimage.com/150x150/cccccc/000000.png"
+                width="150"
+                height="150"
+                class="card-img-top"
+                alt="Cliente 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Cliente 1</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure
+                  asperiores nobis voluptatum corporis eos atque accusamus
+                  provident unde.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card">
+              <img
+                src="https://dummyimage.com/150x150/cccccc/000000.png"
+                width="150"
+                height="150"
+                class="card-img-top"
+                alt="Cliente 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Cliente 2</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel
+                  similique ipsa et laudantium, animi ea eligendi quibusdam quis
+                  dolorum nulla.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card">
+              <img
+                src="https://dummyimage.com/150x150/cccccc/000000.png"
+                width="150"
+                height="150"
+                class="card-img-top"
+                alt="Cliente 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Cliente 3</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                  ullam illo facilis sint. Ullam omnis dolores inventore?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- CARRITO SIDEBAR -->
+    <div id="cart-sidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Carrito <span id="cart-counter" class="cart-counter">0</span></h3>
+      </div>
+
+      <div class="cart-content">
+        <div id="carrito-items" class="cart-items">
+          <!-- Items del carrito serán insertados aquí -->
+        </div>
+
+        <div class="cart-footer">
+          <div class="cart-total">
+            <strong>Total: $<span id="carrito-total">0</span></strong>
+          </div>
+
+          <div class="cart-actions">
+            <button id="vaciar-carrito" class="btn btn-danger btn-sm">
+              Vaciar
+            </button>
+            <button id="realizar-compra" class="btn btn-success">
+              Comprar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay para móviles -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- Modal de Compra Exitosa -->
+    <div
+      class="modal fade"
+      id="compraExitosaModal"
+      tabindex="-1"
+      aria-labelledby="compraExitosaModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="compraExitosaModalLabel">
+              ¡Compra Realizada!
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <div class="mb-3">
+              <div class="text-success" style="font-size: 4rem">✓</div>
+            </div>
+            <h4>¡Tu compra se realizó exitosamente!</h4>
+            <p class="text-muted">
+              Gracias por tu compra. Recibirás un email de confirmación con los
+              detalles de tu pedido.
+            </p>
+            <p>
+              <strong>Total pagado: $<span id="modal-total">0</span></strong>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-dismiss="modal"
+            >
+              Continuar Comprando
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      id="redes-sociales"
+      class="bg-light p-4 mt-5 d-flex justify-content-between align-items-center"
+    >
+      <img
+        src="https://dummyimage.com/120x120/cccccc/000000.png"
+        width="120"
+        height="120"
+        alt="Logo"
+      />
+      <div class="d-flex gap-4">
+        <a href="https://www.facebook.com" target="_blank">
+          <img
+            src="https://dummyimage.com/60x60/cccccc/000000.png"
+            width="60"
+            height="60"
+            alt="Facebook"
+          />
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <img
+            src="https://dummyimage.com/60x60/cccccc/000000.png"
+            width="60"
+            height="60"
+            alt="Instagram"
+          />
+        </a>
+        <a href="https://www.x.com" target="_blank">
+          <img
+            src="https://dummyimage.com/600x60/cccccc/000000.png"
+            width="60"
+            height="60"
+            alt="Twitter"
+          />
+        </a>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
